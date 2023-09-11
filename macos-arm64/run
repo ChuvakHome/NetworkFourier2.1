@@ -1,0 +1,8 @@
+#!/bin/bash
+
+RUN_PATH=$(cd $(dirname $0) && pwd)
+
+export DYLD_LIBRARY_PATH=$RUN_PATH/lib:$DYLD_LIBRARY_PATH
+export DYLD_FRAMEWORK_PATH=$RUN_PATH/Frameworks:$RUN_PATH/extlibs:$DYLD_FRAMEWORK_PATH
+
+$(pwd)/$1 0
