@@ -1,0 +1,10 @@
+#!/bin/bash
+
+RUN_PATH=$(cd $(dirname $0) && pwd)
+
+SFML_ROOT=$1
+
+export DYLD_LIBRARY_PATH=$RUN_PATH/$SFML_ROOT/lib:$DYLD_LIBRARY_PATH
+export DYLD_FRAMEWORK_PATH=$RUN_PATH/$SFML_ROOT/Frameworks:$RUN_PATH/$SFML_ROOT/extlibs:$DYLD_FRAMEWORK_PATH
+
+$(pwd)/$2 0
